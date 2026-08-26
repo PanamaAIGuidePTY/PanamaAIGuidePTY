@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panama AI Guide</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            🇵🇦 <span>Panama</span> AI Guide
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#planificador">Planifica tu viaje</a>
+            <a href="#destinos">Destinos</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-content">
+
+                <p class="tag">🇵🇦 TURISMO INTELIGENTE</p>
+
+                <h1>
+                    Discover Panama.
+                    <span>Powered by AI.</span>
+                </h1>
+
+                <p class="description">
+                    Descubre Panamá de una manera inteligente.
+                    Crea itinerarios personalizados según tu presupuesto,
+                    tiempo e intereses.
+                </p>
+
+                <a href="#planificador" class="main-button">
+                    🤖 Planifica mi viaje
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- PLANIFICADOR -->
+
+        <section id="planificador" class="planner">
+
+            <div class="section-title">
+
+                <p class="tag">PANAMA AI</p>
+
+                <h2>
+                    Crea tu viaje personalizado
+                </h2>
+
+                <p>
+                    Cuéntanos cómo quieres vivir Panamá.
+                </p>
+
+            </div>
+
+
+            <div class="planner-card">
+
+                <form id="travelForm">
+
+                    <div class="form-group">
+
+                        <label>
+                            📍 ¿Dónde quieres viajar?
+                        </label>
+
+                        <select id="destination">
+
+                            <option value="Ciudad de Panamá">
+                                Ciudad de Panamá
+                            </option>
+
+                            <option value="Bocas del Toro">
+                                Bocas del Toro
+                            </option>
+
+                            <option value="Boquete">
+                                Boquete
+                            </option>
+
+                            <option value="El Valle de Antón">
+                                El Valle de Antón
+                            </option>
+
+                            <option value="San Blas">
+                                San Blas
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                📅 ¿Cuántos días?
+                            </label>
+
+                            <input
+                                type="number"
+                                id="days"
+                                min="1"
+                                max="30"
+                                value="3"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                💰 Presupuesto
+                            </label>
+
+                            <input
+                                type="number"
+                                id="budget"
+                                min="1"
+                                value="150"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            ❤️ ¿Qué te interesa?
+                        </label>
+
+                        <div class="interests">
+
+                            <label>
+                                <input type="checkbox" value="playa">
+                                🏖️ Playas
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="naturaleza">
+                                🌿 Naturaleza
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="cultura">
+                                🏛️ Cultura
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="gastronomia">
+                                🍽️ Gastronomía
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="aventura">
+                                🏔️ Aventura
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            🚗 Transporte
+                        </label>
+
+                        <select id="transport">
+
+                            <option value="transporte público">
+                                🚌 Transporte público
+                            </option>
+
+                            <option value="auto">
+                                🚗 Auto
+                            </option>
+
+                            <option value="taxi">
+                                🚕 Taxi
+                            </option>
+
+                            <option value="caminando">
+                                🚶 Caminando
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="generate-button"
+                    >
+                        🤖 Crear mi itinerario
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- RESULTADO -->
+
+            <div
+                id="result"
+                class="result hidden"
+            >
+
+                <div class="ai-header">
+
+                    <span>🤖</span>
+
+                    <div>
+                        <h3>Panama AI</h3>
+                        <p>Tu viaje personalizado</p>
+                    </div>
+
+                </div>
+
+                <div id="itinerary"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESTINOS -->
+
+        <section id="destinos" class="destinations">
+
+            <div class="section-title">
+
+                <p class="tag">EXPLORE PANAMA</p>
+
+                <h2>
+                    Descubre nuestros destinos
+                </h2>
+
+            </div>
+
+
+            <div class="destination-grid">
+
+                <div class="destination-card">
+
+                    <div class="destination-icon">
+                        🏙️
+                    </div>
+
+                    <h3>
+                        Ciudad de Panamá
+                    </h3>
+
+                    <p>
+                        Historia, cultura, gastronomía y modernidad.
+                    </p>
+
+                </div>
+
+
+                <div class="destination-card">
+
+                    <div class="destination-icon">
+                        🏝️
+                    </div>
+
+                    <h3>
+                        Bocas del Toro
+                    </h3>
+
+                    <p>
+                        Playas, naturaleza y aventura caribeña.
+                    </p>
+
+                </div>
+
+
+                <div class="destination-card">
+
+                    <div class="destination-icon">
+                        🌿
+                    </div>
+
+                    <h3>
+                        Boquete
+                    </h3>
+
+                    <p>
+                        Montañas, naturaleza y experiencias de aventura.
+                    </p>
+
+                </div>
+
+
+                <div class="destination-card">
+
+                    <div class="destination-icon">
+                        🏔️
+                    </div>
+
+                    <h3>
+                        El Valle de Antón
+                    </h3>
+
+                    <p>
+                        Naturaleza, senderismo y paisajes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="logo">
+            🇵🇦 Panama AI Guide
+        </div>
+
+        <p>
+            Discover Panama. Powered by AI.
+        </p>
+
+        <p>
+            © 2026 Panama AI Guide
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
